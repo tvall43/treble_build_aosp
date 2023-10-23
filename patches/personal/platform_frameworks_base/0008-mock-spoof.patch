@@ -1,0 +1,26 @@
+From 6a4451ee3f90095423b475bd7f834fc7d7ba827e Mon Sep 17 00:00:00 2001
+From: tim <tim@biglenovo.lan>
+Date: Sun, 22 Oct 2023 14:27:45 -0500
+Subject: [PATCH] mock spoof
+
+Change-Id: Id51f370b12f51dd0a0febbddfd6fcaa077c5f47e
+---
+ .../android/server/location/provider/MockLocationProvider.java  | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/services/core/java/com/android/server/location/provider/MockLocationProvider.java b/services/core/java/com/android/server/location/provider/MockLocationProvider.java
+index 52b04d4bab14..75821c693aad 100644
+--- a/services/core/java/com/android/server/location/provider/MockLocationProvider.java
++++ b/services/core/java/com/android/server/location/provider/MockLocationProvider.java
+@@ -53,7 +53,7 @@ public class MockLocationProvider extends AbstractLocationProvider {
+     /** Sets the location to report for this mock provider. */
+     public void setProviderLocation(Location l) {
+         Location location = new Location(l);
+-        location.setIsFromMockProvider(true);
++//        location.setIsFromMockProvider(true);
+         mLocation = location;
+         reportLocation(LocationResult.wrap(location).validate());
+     }
+-- 
+2.39.2
+
