@@ -100,9 +100,9 @@ buildVndkliteVariants() {
 generatePackages() {
     echo "--> Generating packages"
     buildDate="$(date +%Y%m%d)"
-    xz -cv $BD/system-treble_a64_bvN.img -T0 > $BD/aosp-a64-ab-vanilla-14.0-$buildDate.img.xz
+ #   xz -cv $BD/system-treble_a64_bvN.img -T0 > $BD/aosp-a64-ab-vanilla-14.0-$buildDate.img.xz
  #   xz -cv $BD/system-treble_a64_bvN-vndklite.img -T0 > $BD/aosp-a64-ab-vanilla-vndklite-14.0-$buildDate.img.xz
- #   xz -cv $BD/system-treble_a64_bgN.img -T0 > $BD/aosp-a64-ab-gapps-14.0-$buildDate.img.xz
+    xz -cv $BD/system-treble_a64_bgN.img -T0 > $BD/aosp-a64-ab-gapps-14.0-$buildDate.img.xz
  #   xz -cv $BD/system-treble_a64_bgN-vndklite.img -T0 > $BD/aosp-a64-ab-gapps-vndklite-14.0-$buildDate.img.xz
     rm -rf $BD/system-*.img
     echo
@@ -143,8 +143,8 @@ syncRepos
 applyPatches
 setupEnv
 buildTrebleApp
-buildVanillaVariant
-#buildGappsVariant
+#buildVanillaVariant
+buildGappsVariant
 #buildVndkliteVariants
 generatePackages
 generateOta
